@@ -1,7 +1,9 @@
+import ItemBook from './book';
+import Form from './form';
 
 const Books = () => (
-  <section className="book-list-container">
-    <section className="book-list">
+  <section>
+    <section>
       <ItemBook
         title="Le Petit Prince"
         author="Antoine de Saint-Exupéry"
