@@ -1,11 +1,12 @@
+import { useSelector } from 'react-redux';
 import ItemBook from './book';
 import Form from './form';
 
 const Books = () => {
   const bookList = useSelector((state) => state.booksReducer);
   return (
-    <section>
-      <section>
+    <section className="book-list-container">
+      <section className="book-list">
         {
           bookList.map((book) => (
             <ItemBook

@@ -1,30 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeElement } from '../redux/books/books';
 
 const ItemBook = (props) => {
-  const { title, author, categories } = props;
+  const dispatch = useDispatch();
+
+  const {
+    id, title, author, categories,
+  } = props;
+
+  const handleRemoveBook = () => {
+    dispatch(removeElement(id));
+  };
+
   return (
-    <div>
-      <div>
-        <div>
-          <span>{categories}</span>
+    <div className="book-container">
+      <div className="block-1">
+        <div className="info">
+          <span className="categories">{categories}</span>
           <h2>{title}</h2>
           <h3>{author}</h3>
         </div>
-        <div>
+        <div className="btn-container">
           <button type="button">Comments</button>
-          <button type="button">Remove</button>
+          <button type="button" onClick={handleRemoveBook}>Remove</button>
           <button type="button">Edit</button>
         </div>
       </div>
-      <div>
-        <div>
-          <span>33%</span>
-          <span>Completed</span>
+      <div className="block-2">
+        <div className="stats">
+          <div className="progress-text">
+            <span className="stat-number">33%</span>
+            <span className="stat-text">Completed</span>
+          </div>
         </div>
-        <div>
-          <span>Current chapter</span>
-          <span>Chapter 12</span>
+        <div className="progress-info">
+          <span className="chapter-title">Current chapter</span>
+          <span className="chapter-number">Chapter 5</span>
           <button type="button">UPDATE PROGRESS</button>
         </div>
       </div>
@@ -33,6 +46,7 @@ const ItemBook = (props) => {
 };
 
 ItemBook.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   categories: PropTypes.string.isRequired,
