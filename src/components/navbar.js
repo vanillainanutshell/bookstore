@@ -1,16 +1,41 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import user from '../assets/user.svg';
+import './component.css';
 
 const NavBar = () => (
   <nav>
     <ul>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="logo" to="/bookstore">
+          Bookstore CMS
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/categories">Categories</NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active' : '')}
+          to="/bookstore"
+        >
+          BOOKS
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active' : '')}
+          to="/Categories"
+        >
+          CATEGORIES
+        </NavLink>
       </li>
     </ul>
+    <NavLink
+      className={({ isActive }) => (isActive ? 'active' : '')}
+      to="/bookstore"
+    >
+      <figure>
+        <img className="user-icon" alt="User settings" src={user} />
+      </figure>
+    </NavLink>
   </nav>
 );
 
