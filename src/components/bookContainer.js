@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import ItemBook from './book';
 import Form from './form';
+import './component.css';
 
 const Books = () => {
   const bookList = useSelector((state) => state.booksReducer);

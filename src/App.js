@@ -15,10 +15,12 @@ const App = () => (
   <Router>
     <Provider store={store}>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/categories" element={<Construc />} />
-      </Routes>
+      <section className="content">
+        <Routes>
+          <Route path="/*" element={<Books />} />
+          <Route path="/categories" element={<Construc />} />
+        </Routes>
+      </section>
     </Provider>
   </Router>
 );

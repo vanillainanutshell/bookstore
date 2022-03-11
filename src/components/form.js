@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { sentBook } from '../redux/books/books';
+import './component.css';
 
 const Form = () => {
   const initialFormState = {
@@ -58,7 +59,7 @@ const Form = () => {
             ))
           }
         </select>
-        <button type="submit">ADD BOOK</button>
+        <button className="btn-b-solid" type="submit">ADD BOOK</button>
       </div>
     </form>
   );
