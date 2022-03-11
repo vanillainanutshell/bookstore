@@ -9,7 +9,7 @@ const ItemBook = (props) => {
   const dispatch = useDispatch();
 
   const {
-    id, title, author, categories,
+    id, title, author, category,
   } = props;
 
   const handleRemoveBook = () => {
@@ -20,7 +20,7 @@ const ItemBook = (props) => {
     <div className="book-container">
       <div className="block-1">
         <div className="info">
-          <span className="categories">{categories}</span>
+          <span className="categories">{category}</span>
           <h2>{title}</h2>
           <h3>{author}</h3>
         </div>
@@ -42,7 +42,7 @@ const ItemBook = (props) => {
         </div>
         <div className="progress-info-container">
           <div className="progress-info">
-            <span className="chapter-title">Current chapter</span>
+            <span className="chapter-title">CURRENT CHAPTER</span>
             <span className="chapter-number">Chapter 5</span>
           </div>
           <button className="btn-a-solid" type="button">UPDATE PROGRESS</button>
@@ -56,7 +56,7 @@ ItemBook.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  categories: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default ItemBook;

@@ -17,7 +17,7 @@ const App = () => (
       <NavBar />
       <section className="content">
         <Routes>
-          <Route path="/" element={<Books />} />
+          <Route path="/*" element={<Books />} />
           <Route path="/categories" element={<Construc />} />
         </Routes>
       </section>
