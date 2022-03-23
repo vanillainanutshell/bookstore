@@ -10,6 +10,7 @@
 - JavaScript
 - React
 
+![image](https://user-images.githubusercontent.com/88060989/159811620-48f02cd1-ae47-41ab-be5e-0dcd544b05aa.png)
 
 
 ### Setup
